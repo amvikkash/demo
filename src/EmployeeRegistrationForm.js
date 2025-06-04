@@ -313,11 +313,13 @@ function EmployeeRegistrationForm() {
     const submissionData = { ...formData };
     submissionData.highestQualification = getFinalQualification();
 
-    try {
-      const response = await fetch("http://localhost:8070", {
+     try {
+      const response = await fetch("https://backend-yqvp.onrender.com/employees", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(submissionData),
+      });
+      
       });
       if (!response.ok) throw new Error(`Error: ${response.statusText}`);
       await response.json();
