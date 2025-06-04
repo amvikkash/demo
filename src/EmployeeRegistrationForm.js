@@ -317,9 +317,7 @@ function EmployeeRegistrationForm() {
       const response = await fetch("https://backend-yqvp.onrender.com/employees", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(submissionData),
-      });
-      
+        body: JSON.stringify(submissionData)
       });
       if (!response.ok) throw new Error(`Error: ${response.statusText}`);
       await response.json();
